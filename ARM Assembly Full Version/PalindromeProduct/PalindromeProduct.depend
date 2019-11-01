@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1555514496 source:d:\arm assembly full version\palindromeproduct\main.c
+	<stdio.h>
+	<stdlib.h>
+

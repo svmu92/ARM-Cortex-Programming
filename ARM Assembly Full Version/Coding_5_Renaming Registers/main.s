@@ -1,0 +1,19 @@
+
+VAL1	RN		R1
+;NUM		EQU		0x144
+VAL2	RN		R2
+SUM		RN		R3
+
+		AREA	rn,CODE,READONLY,ALIGN=2
+
+		ENTRY
+		EXPORT __main
+			
+__main
+		MOV VAL1,#0x25
+		MOV VAL2,#0x22
+		
+		ADD	SUM,VAL1,VAL2
+STOP	B	STOP
+
+		END

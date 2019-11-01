@@ -1,0 +1,87 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         
+    3 00000000                 AREA             myCode, CODE, READONLY
+    4 00000000                 ENTRY
+    5 00000000                 EXPORT           __main
+    6 00000000         
+    7 00000000         __main
+    8 00000000 480E            LDR              R0,=0xE000ED88
+    9 00000002 6801            LDR              R1,[R0]
+   10 00000004 F441 0170       ORR              R1,R1,#(0xF<<20)
+   11 00000008 6001            STR              R1,[R0]
+   12 0000000A         
+   13 0000000A F20F 0114 
+              F101 0100        ADRL             R1,ConstantTable
+   14 00000012 ED91 1A05       VLDR.F           S2,[R1,#20]
+   15 00000016 EDD1 1A03       VLDR.F           S3,[R1,#12]
+   16 0000001A EE21 2A21       VMUL.F           S4,S2,S3
+   17 0000001E         
+   18 0000001E         
+   19 0000001E         
+   20 0000001E         
+   21 0000001E E7FE    STOP    B                STOP
+   22 00000020         
+   23 00000020         ConstantTable
+   24 00000020 3F800000        DCD              0x3F800000  ;1.0
+   25 00000024 40000000        DCD              0x40000000  ;2.0
+   26 00000028 BDCCCCCD        DCD              0xBDCCCCCD  ;-0.1
+   27 0000002C 41200000        DCD              0x41200000  ;10.0
+   28 00000030 42C80000        DCD              0x42C80000  ;100.0
+   29 00000034 4048F5C3        DCD              0x4048F5C3  ;pi
+   30 00000038 402D70A4        DCD              0x402D70A4  ;e
+   31 0000003C         
+   32 0000003C                 END
+              E000ED88 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\lookup.d -o.\objects\lookup.o -I.\RTE\_Target_1 -IC:\
+Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\
+STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__E
+VAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA
+ 525" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\list
+ings\lookup.lst lookup.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ConstantTable 00000020
+
+Symbol: ConstantTable
+   Definitions
+      At line 23 in file lookup.s
+   Uses
+      At line 13 in file lookup.s
+Comment: ConstantTable used once
+STOP 0000001E
+
+Symbol: STOP
+   Definitions
+      At line 21 in file lookup.s
+   Uses
+      At line 21 in file lookup.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 7 in file lookup.s
+   Uses
+      At line 5 in file lookup.s
+Comment: __main used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 3 in file lookup.s
+   Uses
+      None
+Comment: myCode unused
+4 symbols
+342 symbols in table

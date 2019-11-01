@@ -1,0 +1,35 @@
+
+NUM		EQU		2
+
+		AREA myCode, CODE, READONLY
+		ENTRY
+		EXPORT	__main
+			
+__main
+		MOV 	R0,#1
+		MOV		R1,#3
+		MOV		R2,#2
+		
+		BL		ARITHFUNC
+STOP	B		STOP
+
+ARITHFUNC
+		CMP		R0,#NUM
+		MOVHS	PC,LR
+		ADRL	R3,JUMPTABLE
+		LDR		PC,[R3,R0,LSL#2]
+		
+		
+JUMPTABLE
+		DCD		DOADD
+		DCD		DOSUB
+			
+DOADD
+		ADD		R0,R1,R2
+		BX		LR
+		
+DOSUB	
+		SUB		R0,R1,R2
+		BX		LR
+		
+END

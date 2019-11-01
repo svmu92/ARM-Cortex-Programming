@@ -1,0 +1,103 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         
+    3 00000000         
+    4 00000000                 AREA             findMin, CODE, READONLY
+    5 00000000                 ENTRY
+    6 00000000                 EXPORT           __main
+    7 00000000         
+    8 00000000         __main
+    9 00000000 480A            LDR              R0,  =DATALIST
+   10 00000002 F04F 0308       MOV              R3,  #8
+   11 00000006         
+   12 00000006 F990 2000       LDRSB            R2,[R0]
+   13 0000000A F100 0001       ADD              R0,R0,#1
+   14 0000000E         LOOP
+   15 0000000E F990 1000       LDRSB            R1,[R0]
+   16 00000012 4291            CMP              R1,R2
+   17 00000014         
+   18 00000014 DA00            BGE              NEXT
+   19 00000016 460A            MOV              R2,R1
+   20 00000018         NEXT
+   21 00000018 F100 0001       ADD              R0,R0,#1
+   22 0000001C 1E5B            SUBS             R3,R3,#1
+   23 0000001E D1F6            BNE              LOOP
+   24 00000020         
+   25 00000020 E7FE    STOP    B                STOP
+   26 00000022         
+   27 00000022 FF 05 07 
+              FC F9 0A 
+              FE 08    DATALIST
+                               DCB              -1,5,7,-4,-7,10,-2,8
+   28 0000002A 00 00           ALIGN
+   29 0000002C         
+   30 0000002C                 END
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\main.d -o.\objects\main.o -I.\RTE\_Target_1 -IC:\Keil
+_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM3
+2F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL 
+SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listings
+\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATALIST 00000022
+
+Symbol: DATALIST
+   Definitions
+      At line 27 in file main.s
+   Uses
+      At line 9 in file main.s
+Comment: DATALIST used once
+LOOP 0000000E
+
+Symbol: LOOP
+   Definitions
+      At line 14 in file main.s
+   Uses
+      At line 23 in file main.s
+Comment: LOOP used once
+NEXT 00000018
+
+Symbol: NEXT
+   Definitions
+      At line 20 in file main.s
+   Uses
+      At line 18 in file main.s
+Comment: NEXT used once
+STOP 00000020
+
+Symbol: STOP
+   Definitions
+      At line 25 in file main.s
+   Uses
+      At line 25 in file main.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 8 in file main.s
+   Uses
+      At line 6 in file main.s
+Comment: __main used once
+findMin 00000000
+
+Symbol: findMin
+   Definitions
+      At line 4 in file main.s
+   Uses
+      None
+Comment: findMin unused
+6 symbols
+344 symbols in table

@@ -1,0 +1,49 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         
+    3 00000000         
+    4 00000000                 AREA             |.text|, CODE, READONLY
+    5 00000000                 EXPORT           __FUNC
+    6 00000000         
+    7 00000000         __FUNC
+    8 00000000 F04F 0079       MOV              R0,#121
+    9 00000004 4770            BX               LR
+   10 00000006         
+   11 00000006 00 00           ALIGN
+   12 00000008                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\func.d -o.\objects\func.o -I.\RTE\_Target_1 -IC:\Keil
+_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM3
+2F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL 
+SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listings
+\func.lst func.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 4 in file func.s
+   Uses
+      None
+Comment: .text unused
+__FUNC 00000000
+
+Symbol: __FUNC
+   Definitions
+      At line 7 in file func.s
+   Uses
+      At line 5 in file func.s
+Comment: __FUNC used once
+2 symbols
+338 symbols in table

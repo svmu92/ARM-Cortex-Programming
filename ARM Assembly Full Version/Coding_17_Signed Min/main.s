@@ -1,0 +1,30 @@
+
+
+
+		AREA findMin, CODE, READONLY
+		ENTRY
+		EXPORT __main
+			
+__main
+		LDR		R0,		=DATALIST
+		MOV 	R3,		#8
+		
+		LDRSB	R2,[R0]
+		ADD		R0,R0,#1
+LOOP		
+		LDRSB	R1,[R0]
+		CMP		R1,R2
+		
+		BGE		NEXT
+		MOV 	R2,R1
+NEXT		
+		ADD		R0,R0,#1
+		SUBS	R3,R3,#1
+		BNE		LOOP
+		
+STOP	B		STOP
+		
+DATALIST	DCB	-1,5,7,-4,-7,10,-2,8
+		ALIGN
+		
+		END

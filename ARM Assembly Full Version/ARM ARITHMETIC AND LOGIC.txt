@@ -1,0 +1,44 @@
+ARM ARITHMETIC AND LOGIC INSTRUCTIONS
+
+flag setting instructions
+ADDS - to update the status registers (N,Z,C,V) after adding
+SUBS - to update the status registers (N,Z,C,V) after subtracting
+
+N and V flags
+N - negative result
+V - signed overflow - when result is greater than 2^31 or less than -2^31
+
+Z flag
+result of an operation is set
+
+C flag
+If result is greater than 2^32.
+
+Comparison Istructions
+CMP - subtracts a register or immediate value from a register value and updates condition codes
+CMN - adds a register or an immediate value to another register and updates the condition codes
+TST - Test - logically ANDs an arithmetic value with a register value and 
+	updates the conditon codes without affecting the V flag.
+TEQ - Testing equivalence - logically exlusive ORs an arithmetic value with a register value and 
+		updates the conditon codes without affecting the V flag.
+MRS - Move PSR to general purpose register
+MSR - Move general purpose register to PSR
+
+N,Z,C,V flags are set(rest) by
+ 1. TST or CMP instructions
+ 2. ADDS, SUBS etc
+ 3. write directly to PSR
+ 4. 16-bit Thumb ALU instructions
+
+
+
+Boolean Operations
+
+1. MOVN - 2's complement (negative) of a number is moved. 
+2. AND - logical AND (word)
+3. ORR - logical OR (word)
+4. EOR - exclusive OR (word)
+5. BIC - bit clear - eg: BIC R1,R2,R3 (R1 = R2 AND NOT R3)
+	
+
+

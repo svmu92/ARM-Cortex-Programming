@@ -1,0 +1,122 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;P=Q+R+S
+    2 00000000         ;let Q=2,R=4,S=6
+    3 00000000         
+    4 00000000                 AREA             myData, DATA, READONLY, ALIGN=2
+    5 00000000         
+    6 00000000 00 00 00 
+              00       P       SPACE            4           ;Reserve 4 bytes of
+                                                             memory
+    7 00000004 00000002 
+                       Q       DCD              2           ;create Q with data
+                                                             2
+    8 00000008 00000004 
+                       R       DCD              4           ;create R with data
+                                                             4
+    9 0000000C 00000006 
+                       S       DCD              6           ;create S with data
+                                                             6
+   10 00000010         
+   11 00000010                 AREA             myCode, CODE, READONLY, ALIGN=2
+   12 00000000                 ENTRY
+   13 00000000                 EXPORT           __main
+   14 00000000         
+   15 00000000         __main
+   16 00000000 F85F 1004       LDR              R1,Q
+   17 00000004 F85F 2004       LDR              R2,R
+   18 00000008 F85F 3004       LDR              R3,S
+   19 0000000C EB01 0002       ADD              R0,R1,R2
+   20 00000010 4418            ADD              R0,R0,R3
+   21 00000012 E7FE    STOP    B                STOP
+   22 00000014                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\main.d -o.\objects\main.o -I.\RTE\_Target_1 -IC:\Keil
+_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM3
+2F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL 
+SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listings
+\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+P 00000000
+
+Symbol: P
+   Definitions
+      At line 6 in file main.s
+   Uses
+      None
+Comment: P unused
+Q 00000004
+
+Symbol: Q
+   Definitions
+      At line 7 in file main.s
+   Uses
+      At line 16 in file main.s
+Comment: Q used once
+R 00000008
+
+Symbol: R
+   Definitions
+      At line 8 in file main.s
+   Uses
+      At line 17 in file main.s
+Comment: R used once
+S 0000000C
+
+Symbol: S
+   Definitions
+      At line 9 in file main.s
+   Uses
+      At line 18 in file main.s
+Comment: S used once
+myData 00000000
+
+Symbol: myData
+   Definitions
+      At line 4 in file main.s
+   Uses
+      None
+Comment: myData unused
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STOP 00000012
+
+Symbol: STOP
+   Definitions
+      At line 21 in file main.s
+   Uses
+      At line 21 in file main.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 15 in file main.s
+   Uses
+      At line 13 in file main.s
+Comment: __main used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 11 in file main.s
+   Uses
+      None
+Comment: myCode unused
+3 symbols
+344 symbols in table

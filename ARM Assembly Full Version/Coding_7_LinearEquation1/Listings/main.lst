@@ -1,0 +1,98 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;P=Q+R+S
+    2 00000000         
+    3 00000000         
+    4 00000000 00000002 
+                       Q       EQU              2
+    5 00000000 00000004 
+                       R       EQU              4
+    6 00000000 00000005 
+                       S       EQU              5
+    7 00000000         
+    8 00000000                 AREA             myCode,CODE,READONLY,ALIGN=3
+    9 00000000                 ENTRY
+   10 00000000                 EXPORT           __main
+   11 00000000         
+   12 00000000         __main
+   13 00000000 F04F 0102       MOV              R1,#Q
+   14 00000004 F04F 0204       MOV              R2,#R
+   15 00000008 F04F 0305       MOV              R3,#S
+   16 0000000C EB01 0002       ADD              R0,R1,R2
+   17 00000010 4418            ADD              R0,R0,R3
+   18 00000012 E7FE    STOP    B                STOP
+   19 00000014                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\main.d -o.\objects\main.o -I.\RTE\_Target_1 -IC:\Keil
+_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM3
+2F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL 
+SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listings
+\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STOP 00000012
+
+Symbol: STOP
+   Definitions
+      At line 18 in file main.s
+   Uses
+      At line 18 in file main.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 12 in file main.s
+   Uses
+      At line 10 in file main.s
+Comment: __main used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 8 in file main.s
+   Uses
+      None
+Comment: myCode unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+Q 00000002
+
+Symbol: Q
+   Definitions
+      At line 4 in file main.s
+   Uses
+      At line 13 in file main.s
+Comment: Q used once
+R 00000004
+
+Symbol: R
+   Definitions
+      At line 5 in file main.s
+   Uses
+      At line 14 in file main.s
+Comment: R used once
+S 00000005
+
+Symbol: S
+   Definitions
+      At line 6 in file main.s
+   Uses
+      At line 15 in file main.s
+Comment: S used once
+3 symbols
+342 symbols in table

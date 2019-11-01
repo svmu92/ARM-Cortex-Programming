@@ -1,0 +1,84 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         
+    3 00000000                 AREA             myCode, CODE, READONLY
+    4 00000000                 ENTRY
+    5 00000000                 EXPORT           __main
+    6 00000000         
+    7 00000000         __main
+    8 00000000 490E            LDR              R1,=1000000000
+    9 00000002 4A0F            LDR              R2,=2000000000
+   10 00000004 4B0F            LDR              R3,=3000000000
+   11 00000006 4C10            LDR              R4,=4000000000
+   12 00000008 4D10            LDR              R5,=4100000000
+   13 0000000A         
+   14 0000000A F04F 0800       MOV              R8,#0
+   15 0000000E F04F 0900       MOV              R9,#0
+   16 00000012         
+   17 00000012 EB18 0801       ADDS             R8,R8,R1    ;R8=R8+R1
+   18 00000016 F149 0900       ADC              R9,R9,#0
+   19 0000001A         
+   20 0000001A EB18 0802       ADDS             R8,R8,R2
+   21 0000001E F149 0900       ADC              R9,R9,#0
+   22 00000022         
+   23 00000022 EB18 0803       ADDS             R8,R8,R3
+   24 00000026 F149 0900       ADC              R9,R9,#0
+   25 0000002A         
+   26 0000002A EB18 0804       ADDS             R8,R8,R4
+   27 0000002E F149 0900       ADC              R9,R9,#0
+   28 00000032         
+   29 00000032 EB18 0805       ADDS             R8,R8,R5
+   30 00000036 F149 0900       ADC              R9,R9,#0
+   31 0000003A         
+   32 0000003A E7FE    STOP    B                STOP
+   33 0000003C         
+   34 0000003C                 END
+              3B9ACA00 
+              77359400 
+              B2D05E00 
+              EE6B2800 
+              F4610900 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\main.d -o.\objects\main.o -I.\RTE\_Target_1 -IC:\Keil
+_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM3
+2F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL 
+SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listings
+\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STOP 0000003A
+
+Symbol: STOP
+   Definitions
+      At line 32 in file main.s
+   Uses
+      At line 32 in file main.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 7 in file main.s
+   Uses
+      At line 5 in file main.s
+Comment: __main used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 3 in file main.s
+   Uses
+      None
+Comment: myCode unused
+3 symbols
+341 symbols in table

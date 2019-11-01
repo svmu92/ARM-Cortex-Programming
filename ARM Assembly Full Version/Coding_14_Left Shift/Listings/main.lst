@@ -1,0 +1,58 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         
+    3 00000000                 AREA             leftShift,CODE,READONLY
+    4 00000000                 ENTRY
+    5 00000000                 EXPORT           __main
+    6 00000000         
+    7 00000000         __main
+    8 00000000 F04F 0011       MOV              R0,#0x11
+    9 00000004 EA4F 0140       LSL              R1,R0,#1    ; SHIFT 1 BIT LEFT
+   10 00000008 EA4F 0241       LSL              R2,R1,#1
+   11 0000000C         
+   12 0000000C E7FE    STOP    B                STOP
+   13 0000000E                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\main.d -o.\objects\main.o -I.\RTE\_cORTEX_m4 -IC:\Kei
+l_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM
+32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL
+ SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 52
+5" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listing
+s\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STOP 0000000C
+
+Symbol: STOP
+   Definitions
+      At line 12 in file main.s
+   Uses
+      At line 12 in file main.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 7 in file main.s
+   Uses
+      At line 5 in file main.s
+Comment: __main used once
+leftShift 00000000
+
+Symbol: leftShift
+   Definitions
+      At line 3 in file main.s
+   Uses
+      None
+Comment: leftShift unused
+3 symbols
+339 symbols in table

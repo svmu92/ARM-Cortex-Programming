@@ -1,0 +1,233 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;REGISTERS
+    2 00000000         ;R0 - Return register
+    3 00000000         ;R1 - argument - Source register
+    4 00000000         ;R2 - temp
+    5 00000000         ;R4 - Starting address of sine table
+    6 00000000         ;R7 - Copy of argument
+    7 00000000         
+    8 00000000         
+    9 00000000                 AREA             myCode, CODE, READONLY
+   10 00000000                 EXPORT           __main
+   11 00000000                 ENTRY
+   12 00000000         
+   13 00000000         __main
+   14 00000000 F04F 0122       MOV              R1,#34
+   15 00000004 460F            MOV              R7,R1
+   16 00000006 F44F 7487       LDR              R4,=270
+   17 0000000A A40A            ADR              R4,sin_data
+   18 0000000C         ;first quadrant  
+   19 0000000C 295A            CMP              R1,#90
+   20 0000000E DD0A            BLE              retvalue
+   21 00000010         ;second quadrant (180-angle)
+   22 00000010 29B4            CMP              R1,#180
+   23 00000012 BFDC            ITT              LE
+   24 00000014 F1C1 01B4       RSBLE            R1,R1,#180
+   25 00000018 E005            BLE              retvalue
+   26 0000001A         
+   27 0000001A 4291            CMP              R1,R2
+   28 0000001C BFDC            ITT              LE
+   29 0000001E 39B4            SUBLE            R1,R1,#180
+   30 00000020 E001            BLE              retvalue
+   31 00000022         
+   32 00000022 F5C1 71B4       RSB              R1,R1,#360
+   33 00000026         
+   34 00000026         retvalue
+   35 00000026 F854 0021       LDR              R0,[R4,R1,LSL #2] ;ADDRESS = BA
+                                                            SE + OFFSET*4
+   36 0000002A 2FB4            CMP              R7,#180     ; If we have to ret
+                                                            urn negative value,
+                                                             negate the value
+   37 0000002C BFC8            IT               GT
+   38 0000002E 4240            RSBGT            R0,R0,#0
+   39 00000030         
+   40 00000030 E7FE    STOP    B                STOP
+   41 00000032         
+   42 00000032 00 00           ALIGN
+   43 00000034         
+   44 00000034         sin_data
+   45 00000034 00000000 
+              00017452 
+              00034899 
+              00052336         DCD              0x000000,0x017452,0x034899,0x05
+2336
+   46 00000044 00069756 
+              00087156 
+              00104528 
+              00121869         DCD              0x069756,0x087156,0x104528,0x12
+1869
+   47 00000054 00139173 
+              00156434 
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+              00173648 
+              00190809         DCD              0x139173,0x156434,0x173648,0x19
+0809
+   48 00000064 00207912 
+              00224951 
+              00241922 
+              00258819         DCD              0x207912,0x224951,0x241922,0x25
+8819
+   49 00000074 00275637 
+              00292372 
+              00309017 
+              00325568         DCD              0x275637,0x292372,0x309017,0x32
+5568
+   50 00000084 00342020 
+              00358368 
+              00374607 
+              00390731         DCD              0x342020,0x358368,0x374607,0x39
+0731
+   51 00000094 00406737 
+              00422618 
+              00438371 
+              00453990         DCD              0x406737,0x422618,0x438371,0x45
+3990
+   52 000000A4 00469472 
+              00484810 
+              00500000 
+              00515038         DCD              0x469472,0x484810,0x500000,0x51
+5038
+   53 000000B4 00529919 
+              00544639 
+              00559193 
+              00573576         DCD              0x529919,0x544639,0x559193,0x57
+3576
+   54 000000C4 00587785 
+              00601815 
+              00615662 
+              00629320         DCD              0x587785,0x601815,0x615662,0x62
+9320
+   55 000000D4 00642788 
+              00656059 
+              00669131 
+              00681998         DCD              0x642788,0x656059,0x669131,0x68
+1998
+   56 000000E4 00694658 
+              00707107 
+              00719340 
+              00731354         DCD              0x694658,0x707107,0x719340,0x73
+1354
+   57 000000F4 00743145 
+              00754710 
+              00766044 
+              00777146         DCD              0x743145,0x754710,0x766044,0x77
+7146
+   58 00000104 00788011 
+              00798635 
+              00809017 
+              00819152         DCD              0x788011,0x798635,0x809017,0x81
+9152
+   59 00000114 00829038 
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+              00838671 
+              00848048 
+              00857167         DCD              0x829038,0x838671,0x848048,0x85
+7167
+   60 00000124 00866025 
+              00874620 
+              00882948 
+              00891007         DCD              0x866025,0x874620,0x882948,0x89
+1007
+   61 00000134 00898794 
+              00906308 
+              00913545 
+              00920505         DCD              0x898794,0x906308,0x913545,0x92
+0505
+   62 00000144 00927184 
+              00933580 
+              00939693 
+              00945519         DCD              0x927184,0x933580,0x939693,0x94
+5519
+   63 00000154 00951057 
+              00956305 
+              00961262 
+              00965926         DCD              0x951057,0x956305,0x961262,0x96
+5926
+   64 00000164 00970296 
+              00974370 
+              00978148 
+              00981627         DCD              0x970296,0x974370,0x978148,0x98
+1627
+   65 00000174 00984808 
+              00987688 
+              00990268 
+              00992546         DCD              0x984808,0x987688,0x990268,0x99
+2546
+   66 00000184 00994522 
+              00996195 
+              00997564 
+              00998630         DCD              0x994522,0x996195,0x997564,0x99
+8630
+   67 00000194         
+   68 00000194                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\main.d -o.\objects\main.o -I.\RTE\_Target_1 -IC:\Keil
+_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Includ
+e -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__MIC
+ROLIB SETA 1" --predefine="__UVISION_VERSION SETA 525" --predefine="_RTE_ SETA 
+1" --predefine="STM32F407xx SETA 1" --list=.\listings\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STOP 00000030
+
+Symbol: STOP
+   Definitions
+      At line 40 in file main.s
+   Uses
+      At line 40 in file main.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 13 in file main.s
+   Uses
+      At line 10 in file main.s
+Comment: __main used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 9 in file main.s
+   Uses
+      None
+Comment: myCode unused
+retvalue 00000026
+
+Symbol: retvalue
+   Definitions
+      At line 34 in file main.s
+   Uses
+      At line 20 in file main.s
+      At line 25 in file main.s
+      At line 30 in file main.s
+
+sin_data 00000034
+
+Symbol: sin_data
+   Definitions
+      At line 44 in file main.s
+   Uses
+      At line 17 in file main.s
+Comment: sin_data used once
+5 symbols
+341 symbols in table

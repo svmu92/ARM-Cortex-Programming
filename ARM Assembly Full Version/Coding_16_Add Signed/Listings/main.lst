@@ -1,0 +1,105 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         
+    3 00000000                 AREA             datalist, DATA, READONLY
+    4 00000000         
+    5 00000000 01 03 FE 
+              F8 F7 05 
+              F9 FA 04 SIGNEDDATA
+                               DCB              1,3,-2,-8,-9,5,-7,-6,4
+    6 00000009 00 00 00        ALIGN
+    7 0000000C         
+    8 0000000C                 AREA             myCode, CODE, READONLY
+    9 00000000                 ENTRY
+   10 00000000                 EXPORT           __main
+   11 00000000         
+   12 00000000         __main
+   13 00000000 4806            LDR              R0,=SIGNEDDATA
+   14 00000002 F04F 0309       MOV              R3,#9
+   15 00000006 F04F 0200       MOV              R2,#0
+   16 0000000A         
+   17 0000000A         loop
+   18 0000000A F990 1000       LDRSB            R1,[R0]
+   19 0000000E 440A            ADD              R2,R2,R1
+   20 00000010 F100 0001       ADD              R0,R0,#1    ;byte-sized data
+   21 00000014 1E5B            SUBS             R3,R3,#1
+   22 00000016 D1F8            BNE              loop
+   23 00000018         
+   24 00000018 E7FE    STOP    B                STOP
+   25 0000001A                 END
+              00 00 00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\main.d -o.\objects\main.o -I.\RTE\_Cortex_M4 -IC:\Kei
+l_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM
+32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL
+ SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 52
+5" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listing
+s\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+SIGNEDDATA 00000000
+
+Symbol: SIGNEDDATA
+   Definitions
+      At line 5 in file main.s
+   Uses
+      At line 13 in file main.s
+Comment: SIGNEDDATA used once
+datalist 00000000
+
+Symbol: datalist
+   Definitions
+      At line 3 in file main.s
+   Uses
+      None
+Comment: datalist unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STOP 00000018
+
+Symbol: STOP
+   Definitions
+      At line 24 in file main.s
+   Uses
+      At line 24 in file main.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 12 in file main.s
+   Uses
+      At line 10 in file main.s
+Comment: __main used once
+loop 0000000A
+
+Symbol: loop
+   Definitions
+      At line 17 in file main.s
+   Uses
+      At line 22 in file main.s
+Comment: loop used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 8 in file main.s
+   Uses
+      None
+Comment: myCode unused
+4 symbols
+344 symbols in table

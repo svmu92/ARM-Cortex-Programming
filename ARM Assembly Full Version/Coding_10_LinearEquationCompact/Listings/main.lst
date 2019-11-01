@@ -1,0 +1,112 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;P=Q+S+R
+    2 00000000         ;Q=2,R=4,S=5
+    3 00000000         
+    4 00000000         
+    5 00000000         ;GIVE OFFSET VALUES
+    6 00000000         
+    7 00000000                 AREA             myC, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           __main
+   10 00000000         
+   11 00000000         __main
+   12 00000000 A003            ADR              R0,P
+   13 00000002 6841            LDR              R1,[R0,#4]
+   14 00000004 6882            LDR              R2,[R0,#8]
+   15 00000006 440A            ADD              R2,R1,R2
+   16 00000008 68C1            LDR              R1,[R0,#12]
+   17 0000000A 440A            ADD              R2,R1,R2
+   18 0000000C         ;ADD   R0,R0,R3
+   19 0000000C 6002            STR              R2,[R0]
+   20 0000000E         
+   21 0000000E E7FE    STOP    B                STOP
+   22 00000010         
+   23 00000010         
+   24 00000010                 AREA             myC, DATA, READONLY
+   25 00000010 00 00 00 
+              00       P       SPACE            4
+   26 00000014 00000002 
+                       Q       DCD              2
+   27 00000018 00000004 
+                       R       DCD              4
+   28 0000001C 00000005 
+                       S       DCD              5
+   29 00000020         
+   30 00000020                 ALIGN
+   31 00000020                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\main.d -o.\objects\main.o -I.\RTE\_Target_1 -IC:\Keil
+_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM3
+2F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL 
+SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listings
+\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+P 00000010
+
+Symbol: P
+   Definitions
+      At line 25 in file main.s
+   Uses
+      At line 12 in file main.s
+Comment: P used once
+Q 00000014
+
+Symbol: Q
+   Definitions
+      At line 26 in file main.s
+   Uses
+      None
+Comment: Q unused
+R 00000018
+
+Symbol: R
+   Definitions
+      At line 27 in file main.s
+   Uses
+      None
+Comment: R unused
+S 0000001C
+
+Symbol: S
+   Definitions
+      At line 28 in file main.s
+   Uses
+      None
+Comment: S unused
+STOP 0000000E
+
+Symbol: STOP
+   Definitions
+      At line 21 in file main.s
+   Uses
+      At line 21 in file main.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 11 in file main.s
+   Uses
+      At line 9 in file main.s
+Comment: __main used once
+myC 00000000
+
+Symbol: myC
+   Definitions
+      At line 7 in file main.s
+   Uses
+      None
+Comment: myC unused
+7 symbols
+343 symbols in table

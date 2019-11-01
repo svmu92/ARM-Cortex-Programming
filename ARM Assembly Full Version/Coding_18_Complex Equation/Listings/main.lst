@@ -1,0 +1,65 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;(A+8B+7C-27)/4
+    2 00000000         ;A=25,B=19,C=99
+    3 00000000         
+    4 00000000                 AREA             myCode,CODE,READONLY,ALIGN=2
+    5 00000000                 ENTRY
+    6 00000000                 EXPORT           __main
+    7 00000000         
+    8 00000000         __main
+    9 00000000 F04F 0019       MOV              R0,#25
+   10 00000004 F04F 0113       MOV              R1,#19
+   11 00000008 EB00 00C1       ADD              R0,R0,R1,LSL #3 ;R1 * 2^3
+   12 0000000C F04F 0163       MOV              R1,#99
+   13 00000010 F04F 0207       MOV              R2,#7
+   14 00000014 FB01 0002       MLA              R0,R1,R2,R0 ; (R0 = (R1*R2)+R0
+   15 00000018 F1A0 001B       SUB              R0,R0,#27
+   16 0000001C EA4F 00A0       MOV              R0,R0,ASR #2 ; DIVIDE THE TOTAL
+                                                             BY 4
+   17 00000020         
+   18 00000020 E7FE    STOP    B                STOP
+   19 00000022                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\main.d -o.\objects\main.o -I.\RTE\_Target_1 -IC:\Keil
+_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM3
+2F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL 
+SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listings
+\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STOP 00000020
+
+Symbol: STOP
+   Definitions
+      At line 18 in file main.s
+   Uses
+      At line 18 in file main.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 8 in file main.s
+   Uses
+      At line 6 in file main.s
+Comment: __main used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 4 in file main.s
+   Uses
+      None
+Comment: myCode unused
+3 symbols
+339 symbols in table

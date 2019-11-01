@@ -1,0 +1,144 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000 00000002 
+                       NUM     EQU              2
+    3 00000000         
+    4 00000000                 AREA             myCode, CODE, READONLY
+    5 00000000                 ENTRY
+    6 00000000                 EXPORT           __main
+    7 00000000         
+    8 00000000         __main
+    9 00000000 F04F 0001       MOV              R0,#1
+   10 00000004 F04F 0103       MOV              R1,#3
+   11 00000008 F04F 0202       MOV              R2,#2
+   12 0000000C         
+   13 0000000C F000 F801       BL               ARITHFUNC
+   14 00000010 E7FE    STOP    B                STOP
+   15 00000012         
+   16 00000012         ARITHFUNC
+   17 00000012 2802            CMP              R0,#NUM
+   18 00000014 BF28 46F7       MOVHS            PC,LR
+   19 00000018 F20F 0308 
+              F103 0300        ADRL             R3,JUMPTABLE
+   20 00000020 F853 F020       LDR              PC,[R3,R0,LSL#2]
+   21 00000024         
+   22 00000024         
+   23 00000024         JUMPTABLE
+   24 00000024 00000000        DCD              DOADD
+   25 00000028 00000000        DCD              DOSUB
+   26 0000002C         
+   27 0000002C         DOADD
+   28 0000002C EB01 0002       ADD              R0,R1,R2
+   29 00000030 4770            BX               LR
+   30 00000032         
+   31 00000032         DOSUB
+   32 00000032 EBA1 0002       SUB              R0,R1,R2
+   33 00000036 4770            BX               LR
+   34 00000038         
+   35 00000038         END
+                       
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\main.d -o.\objects\main.o -I.\RTE\_Target_1 -IC:\Keil
+_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM3
+2F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL 
+SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 525
+" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listings
+\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARITHFUNC 00000012
+
+Symbol: ARITHFUNC
+   Definitions
+      At line 16 in file main.s
+   Uses
+      At line 13 in file main.s
+Comment: ARITHFUNC used once
+DOADD 0000002C
+
+Symbol: DOADD
+   Definitions
+      At line 27 in file main.s
+   Uses
+      At line 24 in file main.s
+Comment: DOADD used once
+DOSUB 00000032
+
+Symbol: DOSUB
+   Definitions
+      At line 31 in file main.s
+   Uses
+      At line 25 in file main.s
+Comment: DOSUB used once
+END 00000038
+
+Symbol: END
+   Definitions
+      At line 35 in file main.s
+   Uses
+      None
+Comment: END unused
+JUMPTABLE 00000024
+
+Symbol: JUMPTABLE
+   Definitions
+      At line 23 in file main.s
+   Uses
+      At line 19 in file main.s
+Comment: JUMPTABLE used once
+STOP 00000010
+
+Symbol: STOP
+   Definitions
+      At line 14 in file main.s
+   Uses
+      At line 14 in file main.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 8 in file main.s
+   Uses
+      At line 6 in file main.s
+Comment: __main used once
+myCode 00000000
+
+Symbol: myCode
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 4 in file main.s
+   Uses
+      None
+Comment: myCode unused
+8 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+NUM 00000002
+
+Symbol: NUM
+   Definitions
+      At line 2 in file main.s
+   Uses
+      At line 17 in file main.s
+Comment: NUM used once
+1 symbol
+345 symbols in table
