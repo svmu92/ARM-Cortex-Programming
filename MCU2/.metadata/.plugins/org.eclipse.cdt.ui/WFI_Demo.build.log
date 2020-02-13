@@ -1,0 +1,23 @@
+17:11:09 **** Incremental Build of configuration Debug for project WFI_Demo ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\WFI_Demo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/WFI_Demo/Inc" -I"D:/My Online Courses/MCU2/Workspace1/WFI_Demo/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/WFI_Demo/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/WFI_Demo/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/WFI_Demo/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: WFI_Demo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F407VGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "WFI_Demo.elf" @"objects.list"   -lm
+Finished building target: WFI_Demo.elf
+ 
+make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "WFI_Demo.elf" "WFI_Demo.hex"
+arm-none-eabi-size "WFI_Demo.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3360	     52	   1636	   5048	   13b8	WFI_Demo.elf
+ 
+
+17:11:14 Build Finished (took 5s.77ms)
+

@@ -1,0 +1,21 @@
+**Probes - GPIO to probe output
+**Timers - for delay
+
+*************************STM32F4-DISCO Pin Assignment**************************
+PROBE
+Probe 0 : PC0
+Probe 1 : PC1
+Probe 2 : PC2
+Probe 3 : PC3
+
+ADC
+ADC		:	PA4
+
+Graphics Display
+GLCD_ST7735
+SCK			:	PB13
+MOSI(SDA)	:	PB15
+RS			:	PB14
+DC			:	PB12
+CS			:	PB10
+

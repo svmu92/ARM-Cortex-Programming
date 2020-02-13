@@ -1,0 +1,237 @@
+16:43:41 **** Incremental Build of configuration Debug for project TEST1 ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building file: ../Src/stm32f4xx_hal_msp.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/stm32f4xx_hal_msp.d" -MT"Src/stm32f4xx_hal_msp.o" -o "Src/stm32f4xx_hal_msp.o" "../Src/stm32f4xx_hal_msp.c"
+Finished building: ../Src/stm32f4xx_hal_msp.c
+ 
+Building file: ../Src/stm32f4xx_it.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/stm32f4xx_it.d" -MT"Src/stm32f4xx_it.o" -o "Src/stm32f4xx_it.o" "../Src/stm32f4xx_it.c"
+Finished building: ../Src/stm32f4xx_it.c
+ 
+Building file: ../Src/syscalls.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" -o "Src/syscalls.o" "../Src/syscalls.c"
+Finished building: ../Src/syscalls.c
+ 
+Building file: ../Src/system_stm32f4xx.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" -o "Src/system_stm32f4xx.o" "../Src/system_stm32f4xx.c"
+Finished building: ../Src/system_stm32f4xx.c
+ 
+Building file: ../Src/usb_host.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/usb_host.d" -MT"Src/usb_host.o" -o "Src/usb_host.o" "../Src/usb_host.c"
+Finished building: ../Src/usb_host.c
+ 
+Building file: ../Src/usbh_conf.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/usbh_conf.d" -MT"Src/usbh_conf.o" -o "Src/usbh_conf.o" "../Src/usbh_conf.c"
+../Src/usbh_conf.c: In function 'HAL_HCD_PortEnabled_Callback':
+../Src/usbh_conf.c:181:3: warning: implicit declaration of function 'USBH_LL_PortEnabled'; did you mean 'USBH_LL_GetToggle'? [-Wimplicit-function-declaration]
+   USBH_LL_PortEnabled(hhcd->pData);
+   ^~~~~~~~~~~~~~~~~~~
+   USBH_LL_GetToggle
+../Src/usbh_conf.c: In function 'HAL_HCD_PortDisabled_Callback':
+../Src/usbh_conf.c:191:3: warning: implicit declaration of function 'USBH_LL_PortDisabled'; did you mean 'USBH_LL_SetTimer'? [-Wimplicit-function-declaration]
+   USBH_LL_PortDisabled(hhcd->pData);
+   ^~~~~~~~~~~~~~~~~~~~
+   USBH_LL_SetTimer
+Finished building: ../Src/usbh_conf.c
+ 
+Building file: ../Src/usbh_platform.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/usbh_platform.d" -MT"Src/usbh_platform.o" -o "Src/usbh_platform.o" "../Src/usbh_platform.c"
+Finished building: ../Src/usbh_platform.c
+ 
+Building file: ../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.d" -MT"Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.o" -o "Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.o" "../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c"
+Finished building: ../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c
+ 
+Building file: ../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.d" -MT"Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.o" -o "Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.o" "../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c"
+Finished building: ../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c
+ 
+Building file: ../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ioreq.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ioreq.d" -MT"Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ioreq.o" -o "Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ioreq.o" "../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ioreq.c"
+Finished building: ../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ioreq.c
+ 
+Building file: ../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_pipes.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_pipes.d" -MT"Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_pipes.o" -o "Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_pipes.o" "../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_pipes.c"
+Finished building: ../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_pipes.c
+ 
+Building file: ../Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/usbh_cdc.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/usbh_cdc.d" -MT"Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/usbh_cdc.o" -o "Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/usbh_cdc.o" "../Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/usbh_cdc.c"
+Finished building: ../Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/usbh_cdc.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
+ 
+Building file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\Workspace1\TEST1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/Workspace1/TEST1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.o" -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.o" "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c"
+Finished building: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c
+ 
+Building target: TEST1.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F407VGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "TEST1.elf" @"objects.list"   -lm
+Finished building target: TEST1.elf
+ 
+make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "TEST1.elf" "TEST1.hex"
+arm-none-eabi-size "TEST1.elf"
+   text	   data	    bss	    dec	    hex	filename
+  19144	    152	   3536	  22832	   5930	TEST1.elf
+ 
+
+16:44:44 Build Finished (took 1m:2s.575ms)
+

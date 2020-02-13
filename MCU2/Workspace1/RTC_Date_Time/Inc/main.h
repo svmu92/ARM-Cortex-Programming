@@ -1,0 +1,23 @@
+/*
+ * main.h
+ *
+ *  Created on: 13-Apr-2019
+ *      Author: Sreenath V
+ */
+
+
+#ifndef MAIN_H_
+#define MAIN_H_
+
+#include "stm32f4xx_hal.h"
+#include "stm32f4xx.h"
+#include <string.h>
+#include <stdarg.h>
+#include <stdint.h>
+
+#define SYS_CLOCK_FREQ_50_MHz	50
+#define SYS_CLOCK_FREQ_84_MHz	84
+#define SYS_CLOCK_FREQ_120_MHz  120
+#define SYS_CLOCK_FREQ_180_MHz 	180
+
+#endif /* MAIN_H_ */

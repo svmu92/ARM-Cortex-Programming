@@ -1,0 +1,105 @@
+#include "stm32f4xx_hal.h"
+#include "stm32f4xx.h"
+#include "main.h"
+#include <string.h>
+
+
+void SystemClockConfig(void);
+void Error_Handler(void);
+void GPIO_Init(void);
+void UART2_Init(void);
+
+
+//TIM_HandleTypeDef htimer6;
+UART_HandleTypeDef huart2;
+extern char msg[30];
+
+int main(void)
+{
+	HAL_Init();
+	//SystemClockConfig();
+
+
+	//Timer6_Init();
+	GPIO_Init();
+	UART2_Init();
+
+
+
+
+	while(1){
+		WFI();
+	}
+
+	return 0;
+
+}
+
+
+
+
+void SystemClockConfig(void)
+{
+
+
+}
+
+void Error_Handler(void)
+{
+	while(1);
+
+}
+
+
+
+void GPIO_Init(void)
+{
+	__HAL_RCC_GPIOD_CLK_ENABLE();
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+
+	//Disable the clocks when in sleep mode
+	__HAL_RCC_GPIOD_CLK_SLEEP_DISABLE();
+
+
+	GPIO_InitTypeDef ledgpio,buttongpio;
+	ledgpio.Pin = GPIO_PIN_12;
+	ledgpio.Mode = GPIO_MODE_OUTPUT_PP;
+	ledgpio.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOD,&ledgpio);
+
+	buttongpio.Pin = GPIO_PIN_0;
+	buttongpio.Mode = GPIO_MODE_IT_FALLING;
+	ledgpio.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOA,&buttongpio);
+
+	 HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+	 HAL_NVIC_SetPriority(EXTI0_IRQn,15,0);
+
+}
+
+void UART2_Init(void)
+{
+	huart2.Instance = USART2;
+	huart2.Init.BaudRate = 115200;
+	huart2.Init.WordLength = UART_WORDLENGTH_8B;
+	huart2.Init.StopBits = UART_STOPBITS_1;
+	huart2.Init.Parity = UART_PARITY_NONE;
+	huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+	huart2.Init.Mode = UART_MODE_TX_RX;
+	if ( HAL_UART_Init(&huart2) != HAL_OK )
+	{
+		//There is a problem
+		Error_Handler();
+	}
+
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	if ( HAL_UART_Transmit(&huart2,(uint8_t*)msg,(uint16_t)strlen((char*)msg),HAL_MAX_DELAY) != HAL_OK)
+	{
+		Error_Handler();
+	}
+}
+
+

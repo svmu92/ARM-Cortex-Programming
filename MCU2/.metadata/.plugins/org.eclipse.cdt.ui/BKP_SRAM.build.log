@@ -1,0 +1,23 @@
+15:51:44 **** Incremental Build of configuration Debug for project BKP_SRAM ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+D:\My Online Courses\MCU2\BKP_SRAM\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/My Online Courses/MCU2/BKP_SRAM/Inc" -I"D:/My Online Courses/MCU2/BKP_SRAM/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/My Online Courses/MCU2/BKP_SRAM/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/My Online Courses/MCU2/BKP_SRAM/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/My Online Courses/MCU2/BKP_SRAM/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: BKP_SRAM.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F407VGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "BKP_SRAM.elf" @"objects.list"   -lm
+Finished building target: BKP_SRAM.elf
+ 
+make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "BKP_SRAM.elf" "BKP_SRAM.hex"
+arm-none-eabi-size "BKP_SRAM.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3040	     52	   1636	   4728	   1278	BKP_SRAM.elf
+ 
+
+15:51:48 Build Finished (took 4s.82ms)
+

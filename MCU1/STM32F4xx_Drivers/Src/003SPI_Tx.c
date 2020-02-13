@@ -1,0 +1,79 @@
+/*
+ * 003SPI_Tx.c
+ *
+ *  Created on: 30-Dec-2019
+ *      Author: Sreenath V
+ */
+
+#include "stm32f407xx.h"
+#include "stm32f407xx_spi.h"
+#include "stm32f407xx_gpio.h"
+#include <string.h>
+#include <stdlib.h>
+
+
+void SPI2_GPIOInits(void);
+void SPI_Inits(void);
+int main(void)
+{
+	char user_data[]="Hello World";
+
+	SPI2_GPIOInits();
+
+	SPI_Inits();
+
+	SPI_SSIConfig(SPI2,ENABLE);
+
+	SPI_PeripheralControl(SPI2,ENABLE);
+
+	SPI_SendData(SPI2,(uint8_t*)user_data,strlen(user_data));
+
+	while( SPI_GetStatusFlag(SPI2,SPI_BUSY_FLAG) );
+
+	//Disable the SPI2 peripheral
+	SPI_PeripheralControl(SPI2,DISABLE);
+
+	while(1);
+	return 0;
+}
+
+void SPI2_GPIOInits(void)
+{
+	GPIO_Handle_t GpioSPI;
+
+	GPIO_PeriClockControl(GPIOB,ENABLE);
+
+	GpioSPI.pGPIOx = GPIOB;
+	GpioSPI.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALTFN;
+	GpioSPI.GPIO_PinConfig.GPIO_PinAltFuncMode = 5;
+	GpioSPI.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+	GpioSPI.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	GpioSPI.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+
+
+
+//	GpioSPI.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_12;
+//	GPIO_Init(&GpioSPI);
+	GpioSPI.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_13;
+	GPIO_Init(&GpioSPI);
+//	GpioSPI.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_14;
+//	GPIO_Init(&GpioSPI);
+	GpioSPI.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_15;
+	GPIO_Init(&GpioSPI);
+}
+
+void SPI_Inits(void)
+{
+	SPI_Handle_t SPI2Handle;
+	SPI2Handle.pSPIx = SPI2;
+	SPI2Handle.SPIConfig.SPI_BusConfig =SPI_BUS_CONFIG_FD;
+	SPI2Handle.SPIConfig.SPI_DeviceMode = SPI_DEVICE_MODE_MASTER;
+	SPI2Handle.SPIConfig.SPI_SclkSpeed = SPI_SCLK_SPEED_DIV2;
+	SPI2Handle.SPIConfig.SPI_DFF = SPI_DFF_8BITS;
+	SPI2Handle.SPIConfig.SPI_CPHA = SPI_CPHA_LOW;
+	SPI2Handle.SPIConfig.SPI_CPOL = SPI_CPOL_HIGH;
+	SPI2Handle.SPIConfig.SPI_SSM = SPI_SSM_EN;
+
+	SPI_Init(&SPI2Handle);
+
+}

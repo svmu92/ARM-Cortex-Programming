@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\My Online Courses\MCU2\Workspace1\RTC_Date_Time"/>
+		<item value="D:\My Online Courses\MCU2\Workspace1\WFI_Demo"/>
+		<item value="D:\My Online Courses\MCU2\Workspace1\Sleep_On_Exit"/>
+		<item value="D:\My Online Courses\MCU2\Workspace1\Can_test"/>
+		<item value="D:\My Online Courses\MCU2\Workspace1\Timer2_OC_PWM"/>
+		<item value="D:\My Online Courses\MCU2\Workspace1\Timer2_OC1"/>
+		<item value="D:\My Online Courses\MCU2\Workspace1\time_base_100ms"/>
+		<item value="D:\My Online Courses\MCU2\Workspace1\USART_Example"/>
+		<item value="D:\My Online Courses\MCU2\Workspace1\TEST1"/>
+	</list>
+</section>

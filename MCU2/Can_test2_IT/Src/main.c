@@ -1,0 +1,370 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include <string.h>
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+
+
+
+
+UART_HandleTypeDef huart2;
+CAN_HandleTypeDef hcan1;
+/* USER CODE BEGIN PV */
+
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+//void SystemClock_ConfigHSE(uint8_t clock_freq);
+void GPIO_Init(void);
+void UART2_Init(void);
+void CAN1_Init(void);
+
+void Error_Handler(void);
+void SystemClockConfig(uint8_t clockFreq);
+void Can1_Txn(void);
+void Can1_Rxn(void);
+void Can_Filter_Config(void);
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+	uint32_t activeITs;
+
+  HAL_Init();
+
+
+  SystemClockConfig(SYS_CLOCK_FREQ_50_MHz);
+
+  UART2_Init();
+  GPIO_Init();
+
+
+  CAN1_Init();
+  Can_Filter_Config();
+
+
+  activeITs = CAN_IT_TX_MAILBOX_EMPTY | CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_BUSOFF;
+  if(HAL_CAN_ActivateNotification(&hcan1,activeITs))
+  {
+	  Error_Handler();
+
+  }
+
+  if(HAL_CAN_Start(&hcan1) != HAL_OK)
+	  {
+	  Error_Handler();
+	  }
+  Can1_Txn();
+
+//  Can1_Rxn();
+
+  while (1);
+  return 0;
+}
+
+
+
+
+void SystemClockConfig(uint8_t clockFreq)
+{
+	RCC_OscInitTypeDef osc_init;
+	RCC_ClkInitTypeDef clk_init;
+
+	uint32_t FlashLatency = 0;
+
+	osc_init.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+	osc_init.HSIState = RCC_HSI_ON;
+	osc_init.HSICalibrationValue = 16;
+	osc_init.PLL.PLLState = RCC_PLL_ON;
+	osc_init.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+
+
+	switch(clockFreq)
+	{
+	case SYS_CLOCK_FREQ_50_MHz	:	osc_init.PLL.PLLM 		= 16;
+									osc_init.PLL.PLLN 		= 100;
+									osc_init.PLL.PLLP 		= 2;
+									clk_init.ClockType 		= RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+									clk_init.SYSCLKSource 	= RCC_SYSCLKSOURCE_PLLCLK;
+									clk_init.APB1CLKDivider = RCC_HCLK_DIV2;
+									clk_init.APB2CLKDivider = RCC_HCLK_DIV2;
+									clk_init.AHBCLKDivider 	= RCC_SYSCLK_DIV1;
+									FlashLatency			= FLASH_ACR_LATENCY_1WS;
+									break;
+	case SYS_CLOCK_FREQ_84_MHz	:	osc_init.PLL.PLLM = 16;
+									osc_init.PLL.PLLN = 168;
+									osc_init.PLL.PLLP = 2;
+									clk_init.ClockType 		= RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+									clk_init.SYSCLKSource 	= RCC_SYSCLKSOURCE_PLLCLK;
+									clk_init.APB1CLKDivider = RCC_HCLK_DIV2;
+									clk_init.APB2CLKDivider = RCC_HCLK_DIV2;
+									clk_init.AHBCLKDivider 	= RCC_SYSCLK_DIV1;
+									FlashLatency			= FLASH_ACR_LATENCY_2WS;
+									break;
+	case SYS_CLOCK_FREQ_120_MHz	:	osc_init.PLL.PLLM = 16;
+									osc_init.PLL.PLLN = 240;
+									osc_init.PLL.PLLP = 2;
+									clk_init.ClockType 		= RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+									clk_init.SYSCLKSource 	= RCC_SYSCLKSOURCE_PLLCLK;
+									clk_init.APB1CLKDivider = RCC_HCLK_DIV4;
+									clk_init.APB2CLKDivider = RCC_HCLK_DIV2;
+									clk_init.AHBCLKDivider 	= RCC_SYSCLK_DIV1;
+									FlashLatency			= FLASH_ACR_LATENCY_3WS;
+									break;
+	case SYS_CLOCK_FREQ_180_MHz	:	osc_init.PLL.PLLM = 16;
+									osc_init.PLL.PLLN = 360;
+									osc_init.PLL.PLLP = 2;
+									clk_init.ClockType 		= RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+									clk_init.SYSCLKSource 	= RCC_SYSCLKSOURCE_PLLCLK;
+									clk_init.APB1CLKDivider = RCC_HCLK_DIV4;
+									clk_init.APB2CLKDivider = RCC_HCLK_DIV2;
+									clk_init.AHBCLKDivider 	= RCC_SYSCLK_DIV1;
+									FlashLatency			= FLASH_ACR_LATENCY_5WS;
+									break;
+	default						:	return;
+	}
+
+	osc_init.PLL.PLLQ = 2;
+	//osc_init.PLL.P = 2;
+
+	if(HAL_RCC_OscConfig(&osc_init) != HAL_OK)
+	{
+		Error_Handler();
+	}
+	if(HAL_RCC_ClockConfig(&clk_init,FlashLatency)!= HAL_OK)
+	{
+		Error_Handler();
+	}
+
+	//SysTick Configuration
+	HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
+	HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
+
+}
+
+/**
+  * @brief System Clock Configuration
+  * @retval None*/
+
+
+ /*USER CODE BEGIN 4 */
+
+void GPIO_Init(void)
+{
+	__HAL_RCC_GPIOD_CLK_ENABLE();
+	GPIO_InitTypeDef ledgpio;
+	ledgpio.Pin = GPIO_PIN_12;
+	ledgpio.Mode = GPIO_MODE_OUTPUT_PP;
+	HAL_GPIO_Init(GPIOD,&ledgpio);
+
+}
+
+
+
+void UART2_Init(void)
+{
+	huart2.Instance = USART2;
+	huart2.Init.BaudRate = 115200;
+	huart2.Init.WordLength = UART_WORDLENGTH_8B;
+	huart2.Init.StopBits = UART_STOPBITS_1;
+	huart2.Init.Parity = UART_PARITY_NONE;
+	huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+	huart2.Init.Mode = UART_MODE_TX_RX;
+	if ( HAL_UART_Init(&huart2) != HAL_OK )
+	{
+		//There is a problem
+		Error_Handler();
+	}
+
+}
+
+
+void CAN1_Init(void)
+{
+	hcan1.Instance = CAN1;
+	hcan1.Init.Mode = CAN_MODE_LOOPBACK;
+	hcan1.Init.AutoBusOff = DISABLE;
+	hcan1.Init.AutoRetransmission = ENABLE;
+	hcan1.Init.AutoWakeUp = DISABLE;
+	hcan1.Init.ReceiveFifoLocked = DISABLE;
+	hcan1.Init.TimeTriggeredMode = DISABLE;
+	hcan1.Init.TransmitFifoPriority = DISABLE;
+
+	hcan1.Init.Prescaler = 5;
+	hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
+	hcan1.Init.TimeSeg1 = CAN_BS1_8TQ;
+	hcan1.Init.TimeSeg2 = CAN_BS2_1TQ;
+
+	if(HAL_CAN_Init(&hcan1) != HAL_OK)
+	{
+		Error_Handler();
+	}
+
+
+}
+
+
+void Can1_Txn(void)
+{
+	CAN_TxHeaderTypeDef TxHeader;
+	uint32_t TxMailbox;
+
+	char msg[50];
+	uint8_t message[5] ={'h','e','l','l','o'};
+
+	TxHeader.DLC = 5;
+	TxHeader.StdId = 0x65D;
+	TxHeader.IDE = CAN_ID_STD;
+	TxHeader.RTR = CAN_RTR_DATA;
+
+	if(HAL_CAN_AddTxMessage(&hcan1,&TxHeader,message,&TxMailbox) != HAL_OK)
+	{
+		Error_Handler();
+	}
+
+
+
+	sprintf(msg,"Message transmitted\n");
+	HAL_UART_Transmit(&huart2,(uint8_t*)msg,strlen(msg),HAL_MAX_DELAY);
+}
+
+
+void Can1_Rxn(void)
+{
+	CAN_RxHeaderTypeDef RxHeader;
+	uint8_t msg_rcv[10];
+	char msg[50];
+
+	while(!HAL_CAN_GetRxFifoFillLevel(&hcan1,CAN_RX_FIFO0));
+
+	if(HAL_CAN_GetRxMessage(&hcan1,CAN_RX_FIFO0,&RxHeader,msg_rcv) != HAL_OK)
+	{
+		Error_Handler();
+	}
+
+	sprintf(msg,"Message Received : %s\r\n",msg_rcv);
+	HAL_UART_Transmit(&huart2,(uint8_t*)msg,strlen(msg),HAL_MAX_DELAY);
+}
+
+void Can_Filter_Config(void)
+{
+	CAN_FilterTypeDef can1_filter;
+
+	can1_filter.FilterActivation = ENABLE;
+	can1_filter.FilterBank = 0;
+	can1_filter.FilterFIFOAssignment = CAN_RX_FIFO0;
+	can1_filter.FilterIdHigh = 0x0000;
+	can1_filter.FilterIdLow = 0x0000;
+	can1_filter.FilterMaskIdHigh = 0x0000;
+	can1_filter.FilterMaskIdLow = 0x0000;
+	can1_filter.FilterMode = CAN_FILTERMODE_IDMASK;
+	can1_filter.FilterScale = CAN_FILTERSCALE_32BIT;
+
+	if(HAL_CAN_ConfigFilter(&hcan1,&can1_filter) != HAL_OK)
+	{
+		Error_Handler();
+	}
+}
+
+
+void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan)
+{
+	char msg[50];
+
+	sprintf(msg,"Message transmitted : M0 \n");
+	HAL_UART_Transmit(&huart2,(uint8_t*)msg,strlen(msg),HAL_MAX_DELAY);
+
+}
+void HAL_CAN_TxMailbox1CompleteCallback(CAN_HandleTypeDef *hcan)
+{
+	char msg[50];
+
+	sprintf(msg,"Message transmitted : M1 \n");
+	HAL_UART_Transmit(&huart2,(uint8_t*)msg,strlen(msg),HAL_MAX_DELAY);
+
+}
+void HAL_CAN_TxMailbox2CompleteCallback(CAN_HandleTypeDef *hcan)
+{
+	char msg[50];
+
+	sprintf(msg,"Message transmitted : M2 \n");
+	HAL_UART_Transmit(&huart2,(uint8_t*)msg,strlen(msg),HAL_MAX_DELAY);
+}
+
+
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+	CAN_RxHeaderTypeDef RxHeader;
+	uint8_t msg_rcv[10];
+	char msg[50];
+	if(HAL_CAN_GetRxMessage(&hcan1,CAN_RX_FIFO0,&RxHeader,msg_rcv) != HAL_OK)
+	{
+		Error_Handler();
+	}
+
+	sprintf(msg,"Message Received : %s\r\n",msg_rcv);
+	HAL_UART_Transmit(&huart2,(uint8_t*)msg,strlen(msg),HAL_MAX_DELAY);
+
+}
+
+
+void HAL_CAN_ErrorCallback(CAN_HandleTypeDef *hcan)
+{
+	char msg[50];
+
+	sprintf(msg,"Error on CAN Bus \n");
+	HAL_UART_Transmit(&huart2,(uint8_t*)msg,strlen(msg),HAL_MAX_DELAY);
+}
+
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+	while(1);
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{ 
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
